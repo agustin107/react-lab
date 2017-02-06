@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Hello World in React</title>
+</head>
+<body>
+	<main id="app"></main>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.4.2/react.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.4.2/react-dom.js"></script>
+	<script>
+		function Hello(props) {
+			const name = props.name;
+
+			return React.DOM.h1({
+				id: 'Title',
+			}, `Hello ${name}`);
+		}
+
+		const hello = React.createElement(Hello, {
+			name: 'React Lab',
+		});
+
+		ReactDOM.render(
+			hello,
+			document.getElementById('app')
+		);
+
+		setTimeout(() => {
+			ReactDOM.render(
+				React.createElement(Hello, { name: 'React Lab!' }),
+				document.getElementById('app')
+			);
+		}, 2000);
+	</script>
+</body>
+</html>
